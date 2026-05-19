@@ -1,5 +1,6 @@
 # TODO
-- [ ] code
+- [ ] simulation code
+- [ ] train code
 
 # EndoGSim: Physics-Aware 4D Dynamic Endoscopic Scene Simulations via MLLM-Guided Gaussian Splatting
 
