@@ -1,0 +1,29 @@
+# Cursor IDE
+.cursorindexingignore
+.specstory/
+
+# Local-only (not on GitHub)
+simulation.py
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Large output folders
+outputs/
+outputs_ours/
+outputs_Physics3D/
+outputs_PhysGaussian/
+outputs_physflow/
+outputs_gic/
+outputs_instrument/
+model/
+pytorch3d/
+submodules/simple-knn/build/
+submodules/diff-plane-rasterization/build/
+wandb/
+config/
+mpm_solver_warp_old/
+mpm_solver_warp_new/
