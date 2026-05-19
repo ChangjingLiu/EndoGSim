@@ -21,8 +21,10 @@ outputs_gic/
 outputs_instrument/
 model/
 pytorch3d/
-submodules/simple-knn/build/
-submodules/diff-plane-rasterization/build/
+submodules/**/build/
+submodules/**/*.egg-info/
+submodules/**/*.so
+submodules/**/.DS_Store
 wandb/
 config/
 mpm_solver_warp_old/
