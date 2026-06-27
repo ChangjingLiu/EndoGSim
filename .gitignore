@@ -28,3 +28,4 @@ submodules/**/.DS_Store
 wandb/
 mpm_solver_warp_old/
 mpm_solver_warp_new/
+simulation_gt.sh
