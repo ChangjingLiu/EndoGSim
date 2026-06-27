@@ -26,6 +26,5 @@ submodules/**/*.egg-info/
 submodules/**/*.so
 submodules/**/.DS_Store
 wandb/
-config/
 mpm_solver_warp_old/
 mpm_solver_warp_new/
