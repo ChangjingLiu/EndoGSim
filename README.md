@@ -1,21 +1,18 @@
 # TODO
+
 - [ ] simulation code
 - [ ] train code
 
 # EndoGSim: Physics-Aware 4D Dynamic Endoscopic Scene Simulations via MLLM-Guided Gaussian Splatting
 
-### <p align="left">[Project Page](https://changjingliu.github.io/EndoGSim/) | [ArXiv](https://arxiv.org/abs/2605.16022)</p>
-####  <p align="left"> [Changjing Liu](https://changjingliu.github.io/), [Yiming Huang](https://lastbasket.github.io/), [Long Bai](https://longbai-cuhk.github.io/), [Beilei Cui](https://beileicui.github.io/), [Hongliang Ren](https://www.ee.cuhk.edu.hk/en-gb/people/academic-staff/professors/prof-ren-hongliang)</p>
+### [Project Page](https://changjingliu.github.io/EndoGSim/) | [ArXiv](https://arxiv.org/abs/2605.16022)
 
+#### [Changjing Liu](https://changjingliu.github.io/), [Yiming Huang](https://lastbasket.github.io/), [Long Bai](https://longbai-cuhk.github.io/), [Beilei Cui](https://beileicui.github.io/), [Hongliang Ren](https://www.ee.cuhk.edu.hk/en-gb/people/academic-staff/professors/prof-ren-hongliang)
 
-
-<p align="left">
-  <!-- <img width="60%" src="assets/teaser.png"/> -->
-  <img width="80%" src="assets/teaser.gif"/>
-</p>
 
 
 ## 1. Installation
+
 ```sh
 conda create -n endogsim python=3.10 -y
 conda activate endogsim
@@ -31,35 +28,78 @@ pip install ./diff-plane-rasterization
 ```
 
 
-## 2. Dataset
-We provide three preprocessed datasets: Please download them and place in the `./model` directory.
 
+## 2. Dataset
+
+
+
+### Download .ply files
+
+We provide three preprocessed datasets([Google Drive](https://drive.google.com/drive/folders/1ytB2xZtC2pAd9Sq3OfEfmUR6SHoiJ4-D?usp=sharing)). Please download them and place in the `./model` directory.
 After downloading, the dataset structure will be as follows:
+
 ```
 model/
 ├── cholecseg_sub/
-│   ├── video01_00080/
-│   │   ├── frames
-│   │   ├── images_generated
-│   │   ├── point_cloud
+│   └── video01_00080/
+│       └── point_cloud/iteration_3000/
+│                       └── point_cloud.ply
 ├── endonerf/
-│   ├── cutting_tissues_twice/
-│   │   ├── images
-│   │   ├── images_generated
-│   │   ├── point_cloud
-│   │   ...
+│   └── cutting_tissues_twice/
+│       └── point_cloud/iteration_3000/
+│                       └── point_cloud.ply
+└── porcine_endo/
+    └── gallbladder/
+        └── point_cloud/iteration_3000/
+                        └── point_cloud.ply
 ```
-## 3. Simulation
 
+### Generate images
+
+For example, to generate images for the `porcine_endo/gallbladder` dataset:
+
+```sh
+python simulation_gt.py \
+  --model_path ./model/porcine_endo/gallbladder \
+  --output_path ./model/porcine_endo/gallbladder \
+  --physics_config ./config/porcine_endo/gallbladder_config_gt.json \
+  --n_key_frame 10 \
+  --dataset porcine_endo \
+  --save_debug_flow  # optional
+```
+
+After generating, the dataset structure will be as follows:
+
+```
+model/
+├── cholecseg_sub/
+│   └── video01_00080/
+│       ├── frames/
+│       ├── images_generated/
+│       └── point_cloud/iteration_3000/
+                        └── point_cloud.ply
+├── endonerf/
+│   └── cutting_tissues_twice/
+│       ├── frames/
+│       ├── images_generated/
+│       └── point_cloud/iteration_3000/
+                        └── point_cloud.ply
+└── porcine_endo/
+    └── gallbladder/
+        ├── frames/
+        ├── images_generated/
+        └── point_cloud/iteration_3000/
+                        └── point_cloud.ply
+```
 
 ## 3. Running
+
 ```sh
-# for cholecseg_sub dataset from PAC-NeRF
+# cholecseg_sub dataset (from PAC-NeRF)
 sh simulation_train_all_cholecseg_sub.sh
 
-# for endonerf dataset from PhysDreamer
+# endonerf dataset (from PhysDreamer)
 sh simulation_train_all_endonerf.sh
-
 ```
 
 **Real-time preview (MPM + GS):** [interactive/README.md](interactive/README.md)
@@ -68,7 +108,7 @@ sh simulation_train_all_endonerf.sh
 
 ### Acknowledgements
 
-This framework builds upon​​  [PhysFlow](https://github.com/zhuomanliu/PhysFlow), [PhysGaussian](https://github.com/XPandora/PhysGaussian), [endo-4dgs](https://github.com/lastbasket/Endo-4DGS), [Pi^3](https://github.com/yyfz/Pi3).​​
+This framework builds upon [PhysFlow](https://github.com/zhuomanliu/PhysFlow), [PhysGaussian](https://github.com/XPandora/PhysGaussian), [endo-4dgs](https://github.com/lastbasket/Endo-4DGS), [Pi^3](https://github.com/yyfz/Pi3).
 
 ---
 
