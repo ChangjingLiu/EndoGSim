@@ -4,8 +4,8 @@
 
 # EndoGSim: Physics-Aware 4D Dynamic Endoscopic Scene Simulations via MLLM-Guided Gaussian Splatting
 
-### <p align="left">[Project Page]() | [ArXiv](https://arxiv.org/abs/2605.16022)</p>
-####  <p align="left"> Changjing Liu, Yiming Huang, Long Bai, Beilei Cui, Hongliang Ren*</p>
+### <p align="left">[Project Page](https://changjingliu.github.io/EndoGSim/) | [ArXiv](https://arxiv.org/abs/2605.16022)</p>
+####  <p align="left"> [Changjing Liu](https://changjingliu.github.io/), [Yiming Huang](https://lastbasket.github.io/), [Long Bai](https://longbai-cuhk.github.io/), [Beilei Cui](https://beileicui.github.io/), [Hongliang Ren](https://www.ee.cuhk.edu.hk/en-gb/people/academic-staff/professors/prof-ren-hongliang)</p>
 
 
 
@@ -49,6 +49,8 @@ model/
 │   │   ├── point_cloud
 │   │   ...
 ```
+## 3. Simulation
+
 
 ## 3. Running
 ```sh
@@ -59,6 +61,9 @@ sh simulation_train_all_cholecseg_sub.sh
 sh simulation_train_all_endonerf.sh
 
 ```
+
+**Real-time preview (MPM + GS):** [interactive/README.md](interactive/README.md)
+
 ---
 
 ### Acknowledgements

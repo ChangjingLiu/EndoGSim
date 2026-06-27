@@ -142,6 +142,12 @@ def undo_all_transforms(input, rotation_matrices, scale_origin, original_mean_po
     )
 
 
+def world_to_mpm(position_tensor, rotation_matrices, scale_origin, original_mean_pos):
+  """Inverse of undo_all_transforms for (n, 3) CUDA tensors."""
+  rot_pos = apply_rotations(position_tensor, rotation_matrices)
+  return shift2center111((rot_pos - original_mean_pos) * scale_origin)
+
+
 def get_center_view_worldspace_and_observant_coordinate(
     mpm_space_viewpoint_center,
     mpm_space_vertical_upward_axis,
