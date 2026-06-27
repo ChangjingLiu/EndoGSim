@@ -9,7 +9,10 @@
 
 #### [Changjing Liu](https://changjingliu.github.io/), [Yiming Huang](https://lastbasket.github.io/), [Long Bai](https://longbai-cuhk.github.io/), [Beilei Cui](https://beileicui.github.io/), [Hongliang Ren](https://www.ee.cuhk.edu.hk/en-gb/people/academic-staff/professors/prof-ren-hongliang)
 
-
+<p align="left">
+  <!-- <img width="60%" src="assets/teaser.png"/> -->
+  <img width="80%" src="assets/teaser.gif"/>
+</p>
 
 ## 1. Installation
 
@@ -77,13 +80,13 @@ model/
 │       ├── frames/
 │       ├── images_generated/
 │       └── point_cloud/iteration_3000/
-                        └── point_cloud.ply
+|                        └── point_cloud.ply
 ├── endonerf/
 │   └── cutting_tissues_twice/
 │       ├── frames/
 │       ├── images_generated/
 │       └── point_cloud/iteration_3000/
-                        └── point_cloud.ply
+|                        └── point_cloud.ply
 └── porcine_endo/
     └── gallbladder/
         ├── frames/
@@ -92,7 +95,7 @@ model/
                         └── point_cloud.ply
 ```
 
-## 3. Running
+## 3. Training
 
 ```sh
 # cholecseg_sub dataset (from PAC-NeRF)
@@ -102,9 +105,21 @@ sh simulation_train_all_cholecseg_sub.sh
 sh simulation_train_all_endonerf.sh
 ```
 
-**Real-time preview (MPM + GS):** [interactive/README.md](interactive/README.md)
-
 ---
+
+## Simulation
+
+Simulation can be performed by editing the configuration files to the corresponding config files.
+
+```sh
+python simulation_gt.py \
+  --model_path ./model/porcine_endo/gallbladder \
+  --output_path ./simulation_output/porcine_endo/gallbladder \
+  --physics_config ./config/porcine_endo/my_config.json # modify this file to your own configuration\
+  --n_key_frame 10 \
+  --dataset porcine_endo \
+  --save_debug_flow # optional
+```
 
 ### Acknowledgements
 
