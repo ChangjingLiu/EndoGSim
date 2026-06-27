@@ -1,0 +1,33 @@
+# Step 6 in README: install after PyTorch, PyTorch3D, and tiny-cuda-nn;
+# then build submodules/simple-knn and submodules/diff-plane-rasterization.
+name: endogsim
+channels:
+  - defaults
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+      # MPM / simulation
+      - taichi==1.5.0
+      - warp-lang==0.10.1
+      - h5py>=3.10
+      - mcubes>=0.1.6
+      - point-cloud-utils>=0.30.0
+      # 3DGS / rendering helpers
+      - plyfile>=1.0.0
+      - opencv-python>=4.8.0
+      # optical-flow guidance & training
+      - jaxtyping>=0.2.0
+      - omegaconf>=2.3.0
+      - antlr4-python3-runtime==4.9.3
+      - wandb>=0.15.0
+      # eval / IO
+      - imageio>=2.34.0
+      - imageio-ffmpeg>=0.5.0
+      - pandas>=2.0.0
+      - requests>=2.28.0
+      # common scientific stack (torch installed separately per README)
+      - numpy>=1.24.0,<3.0.0
+      - scipy>=1.10.0
+      - pillow>=10.0.0
+      - tqdm>=4.65.0
