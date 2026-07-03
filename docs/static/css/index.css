@@ -162,6 +162,94 @@ body {
     display: inline-block;
 }
 
+.hero-media-block {
+    width: 80%;
+    max-width: 100%;
+    margin: 1rem auto 0;
+}
+
+.page-content {
+    width: 90%;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-content .publication-tldr {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: none;
+    margin: 1rem 0;
+    padding: 0.875rem 1.25rem;
+    box-sizing: border-box;
+    background: var(--background-accent);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    text-align: left;
+}
+
+.page-content .hero-teaser-gif {
+    margin: 0;
+    width: 100%;
+    display: block;
+}
+
+.hero-media-block .publication-tldr {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    max-width: none;
+    margin: 0 0 1rem;
+    padding: 0.875rem 1.25rem;
+    box-sizing: border-box;
+    background: var(--background-accent);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-sm);
+    text-align: left;
+}
+
+.hero-media-block .hero-teaser-gif {
+    margin: 0;
+    width: 100%;
+    display: block;
+}
+
+.publication-tldr {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    max-width: 42rem;
+    margin: 1.5rem auto 0;
+    padding: 0.75rem 1.25rem;
+    background: var(--background-accent);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    text-align: left;
+}
+
+.publication-tldr-label {
+    flex-shrink: 0;
+    font-weight: 800;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em;
+    color: var(--primary-color);
+    padding: 0.25rem 0.625rem;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--background-primary);
+}
+
+.publication-tldr-text {
+    color: var(--text-secondary);
+    font-size: 1.125rem;
+    line-height: 1.5;
+}
+
 .publication-awards {
     color: #ef4444;
     width: fit-content;

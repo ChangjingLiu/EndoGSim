@@ -6,7 +6,7 @@
   
   <!-- Primary Meta Tags -->
   <!-- TODO: Replace with your paper title and author names -->
-  <meta name="title" content="PAPER_TITLE - AUTHOR_NAMES">
+  <meta name="title" content="EndoGSim">
   <!-- TODO: Write a compelling 150-160 character description of your research -->
   <meta name="description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
   <!-- TODO: Add 5-10 relevant keywords for your research area -->
@@ -21,7 +21,7 @@
   <!-- TODO: Replace with your institution or lab name -->
   <meta property="og:site_name" content="INSTITUTION_OR_LAB_NAME">
   <!-- TODO: Same as paper title above -->
-  <meta property="og:title" content="PAPER_TITLE">
+  <meta property="og:title" content="EndoGSim">
   <!-- TODO: Same as description above -->
   <meta property="og:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
   <!-- TODO: Replace with your actual website URL -->
@@ -30,7 +30,7 @@
   <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="PAPER_TITLE - Research Preview">
+  <meta property="og:image:alt" content="EndoGSim">
   <meta property="article:published_time" content="2024-01-01T00:00:00.000Z">
   <meta property="article:author" content="FIRST_AUTHOR_NAME">
   <meta property="article:section" content="Research">
@@ -44,7 +44,7 @@
   <!-- TODO: Replace with first author's Twitter handle -->
   <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE">
   <!-- TODO: Same as paper title above -->
-  <meta name="twitter:title" content="PAPER_TITLE">
+  <meta name="twitter:title" content="EndoGSim">
   <!-- TODO: Same as description above -->
   <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS">
   <!-- TODO: Same as social preview image above -->
@@ -52,7 +52,7 @@
   <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview">
 
   <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="PAPER_TITLE">
+  <meta name="citation_title" content="EndoGSim">
   <meta name="citation_author" content="FIRST_AUTHOR_LAST, FIRST_AUTHOR_FIRST">
   <meta name="citation_author" content="SECOND_AUTHOR_LAST, SECOND_AUTHOR_FIRST">
   <meta name="citation_publication_date" content="2024">
@@ -74,7 +74,7 @@
 
 
   <!-- TODO: Replace with your paper title and authors -->
-  <title>PAPER_TITLE - AUTHOR_NAMES | Academic Research</title>
+  <title>EndoGSim</title>
   
   <!-- Favicon and App Icons -->
   <link rel="icon" type="image/x-icon" href="static/images/github.ico">
@@ -82,7 +82,67 @@
   
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
+  <link rel="stylesheet" href="static/css/index.css?v=5">
+  <style>
+    .page-content .publication-tldr-label {
+      flex-shrink: 0;
+      font-weight: 800;
+      font-size: 0.8rem;
+      letter-spacing: 0.06em;
+      color: #2563eb;
+      padding: 0.35rem 0.65rem;
+      border: 1px solid #93c5fd;
+      border-radius: 6px;
+      background: #ffffff;
+    }
+
+    .page-content .publication-tldr-text {
+      color: #475569;
+      font-size: 1.125rem;
+      font-weight: 500;
+      line-height: 1.5;
+    }
+
+    .publication-logos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.25rem;
+      flex-wrap: wrap;
+    }
+
+    .publication-logos img {
+      height: 3.5rem;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .hero-header .hero-body {
+      padding-bottom: 1rem;
+    }
+
+    .gradient-gs {
+      background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #a855f7 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    .gradient-sim {
+      background: linear-gradient(135deg, #0891b2 0%, #14b8a6 50%, #10b981 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: transparent;
+    }
+
+    .miccai-accept {
+      color: #dc2626;
+      font-weight: 700;
+    }
+  </style>
   
   <!-- Non-critical CSS - Load asynchronously -->
   <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -231,103 +291,78 @@
   -->
 
   <main id="main-content">
-  <section class="hero">
+  <section class="hero hero-header">
     <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">EndoGSim: Physics-Aware 4D Dynamic Endoscopic Scene Simulations via MLLM-Guided Gaussian Splatting</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="https://changjingliu.github.io/" target="_blank">Changjing Liu</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="https://lastbasket.github.io/" target="_blank">Yiming Huang</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="https://longbai-cuhk.github.io/" target="_blank">Long Bai</a><sup></sup>,</span>
-                    <span class="author-block">
-                      <a href="https://beileicui.github.io/" target="_blank">Beilei Cui</a><sup></sup>,</span>
-                      <span class="author-block">
-                        <a href="https://www.ee.cuhk.edu.hk/en-gb/people/academic-staff/professors/prof-ren-hongliang" target="_blank">Hongliang Ren</a><sup>**</sup></span>
-                  </span>
-                  </div>
+      <div class="container is-max-desktop has-text-centered">
+        <h1 class="title is-1 publication-title">Endo<span class="gradient-gs">G</span><span class="gradient-sim">Sim</span>: Physics-Aware 4D Dynamic Endoscopic Scene <span class="gradient-sim">Simulations</span> via MLLM-Guided <span class="gradient-gs">Gaussian Splatting</span></h1>
+        <div class="page-content">
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+              <a href="https://changjingliu.github.io/" target="_blank">Changjing Liu</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://lastbasket.github.io/" target="_blank">Yiming Huang</a><sup>*</sup>,</span>
+            <span class="author-block">
+              <a href="https://longbai-cuhk.github.io/" target="_blank">Long Bai</a><sup></sup>,</span>
+            <span class="author-block">
+              <a href="https://beileicui.github.io/" target="_blank">Beilei Cui</a><sup></sup>,</span>
+            <span class="author-block">
+              <a href="https://www.ee.cuhk.edu.hk/en-gb/people/academic-staff/professors/prof-ren-hongliang" target="_blank">Hongliang Ren</a><sup>**</sup></span>
+          </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block">The Chinese University of Hong Kong<br>early accepted by MICCAI 2026</span>
-                    <!-- TODO: Remove this line if no equal contribution -->
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                    <span class="eql-cntrb"><small><br><sup>**</sup>Indicates corresponding author</small></span>
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/2605.16022" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-                    <!-- <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span> -->
-
-                  <!-- TODO: Replace with your GitHub repository URL -->
-                  <span class="link-block">
-                    <a href="https://github.com/ChangjingLiu/EndoGSim" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- TODO: Update with your arXiv paper ID -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/2605.16022" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">The Chinese University of Hong Kong<br><span class="miccai-accept">early accepted by MICCAI 2026</span></span>
+            <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+            <span class="eql-cntrb"><small><br><sup>**</sup>Indicates corresponding author</small></span>
+            <div class="publication-logos">
+              <img src="static/images/cuhk_logo.png" alt="The Chinese University of Hong Kong" loading="lazy" />
+              <img src="static/images/miccai2026.png" alt="MICCAI 2026" loading="lazy" />
             </div>
           </div>
+
+          <div class="publication-links">
+            <span class="link-block">
+              <a href="https://arxiv.org/pdf/2605.16022" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fas fa-file-pdf"></i>
+              </span>
+              <span>Paper</span>
+            </a>
+          </span>
+
+          <span class="link-block">
+            <a href="https://github.com/ChangjingLiu/EndoGSim" target="_blank"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+              <i class="fab fa-github"></i>
+            </span>
+            <span>Code</span>
+          </a>
+        </span>
+
+        <span class="link-block">
+          <a href="https://arxiv.org/abs/2605.16022" target="_blank"
+          class="external-link button is-normal is-rounded is-dark">
+          <span class="icon">
+            <i class="ai ai-arxiv"></i>
+          </span>
+          <span>arXiv</span>
+        </a>
+      </span>
+          </div>
+
+          <div class="publication-tldr">
+            <span class="publication-tldr-label">TL;DR</span>
+            <span class="publication-tldr-text">From surgical video to physics-based simulation.</span>
+          </div>
+
+          <figure class="image hero-teaser-gif">
+            <img src="static/images/teaser.gif" alt="EndoGSim teaser" style="max-width: 100%; height: auto;" loading="lazy" />
+          </figure>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-
-<section class="section hero is-small">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="has-text-centered">
-        <h2 class="title is-4"></h2>
-        <figure class="image">
-          <img src="static/images/teaser.gif" alt="Description" style="max-width: 100%; height: auto;" loading="lazy" />
-        </figure>
-        <p class="subtitle is-6 mt-4"></p>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
 <!-- Teaser video-->
 <!-- <section class="hero teaser">
@@ -347,15 +382,12 @@
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <!-- TODO: Replace with your paper abstract -->
-          <p>
-            In robot-assisted minimally invasive surgery, high-fidelity dynamic endoscopic scene reconstruction and simulation are crucial to enhancing downstream tasks and advancing surgical outcomes. However, existing methods primarily focus on visual reconstruction, lacking physics-based descriptions of the scene required for realistic simulation. We propose a unified framework that achieves physics-aware reconstruction and physical simulation of endoscopic scenes through Multi-modal Large Language Models (MLLMs)-guided Gaussian Splatting. Our approach utilizes 4D Gaussian Splatting (4DGS) integrated with pre-trained segmentation and depth estimation to represent deformable tissues and tools. To achieve automatic inference of physical properties, we introduce an object-wise material field that initializes material parameters via MLLM and refines them through a differentiable Material Point Method (MPM) under joint supervision from rendered images and optical flow.
-          </p>
-        </div>
+    <div class="page-content has-text-centered">
+      <h2 class="title is-3">Abstract</h2>
+      <div class="content has-text-justified">
+        <p>
+          In robot-assisted minimally invasive surgery, high-fidelity dynamic endoscopic scene reconstruction and simulation are crucial to enhancing downstream tasks and advancing surgical outcomes. However, existing methods primarily focus on visual reconstruction, lacking physics-based descriptions of the scene required for realistic simulation. We propose a unified framework that achieves physics-aware reconstruction and physical simulation of endoscopic scenes through Multi-modal Large Language Models (MLLMs)-guided Gaussian Splatting. Our approach utilizes 4D Gaussian Splatting (4DGS) integrated with pre-trained segmentation and depth estimation to represent deformable tissues and tools. To achieve automatic inference of physical properties, we introduce an object-wise material field that initializes material parameters via MLLM and refines them through a differentiable Material Point Method (MPM) under joint supervision from rendered images and optical flow.
+        </p>
       </div>
     </div>
   </div>
@@ -365,16 +397,28 @@
 <section class="section hero is-small">
   <div class="hero-body">
     <div class="container is-max-desktop">
-      <div class="has-text-centered">
-        <h2 class="title is-4">Pipeline</h2>
+      <div class="page-content has-text-centered">
+        <h2 class="title is-3">Pipeline</h2>
         <figure class="image">
-          <img src="static/images/overview.png" alt="Description" style="max-width: 100%; height: auto;" loading="lazy" />
+          <img src="static/images/overview.png" alt="EndoGSim pipeline overview" style="max-width: 100%; height: auto;" loading="lazy" />
         </figure>
-        <p class="subtitle is-6 mt-4"></p>
       </div>
     </div>
   </div>
 </section>
+
+<!-- <section class="section hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="has-text-centered">
+        <h2 class="title is-4">Results</h2>
+        <figure class="image">
+          <img src="static/images/result_flow.png" alt="EndoGSim qualitative results across surgical scenes" style="max-width: 100%; height: auto;" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </div>
+</section> -->
 
 <!--
 Image carousel, Video Presentation, and Another Carousel (disabled; inner HTML comments stripped so this block comment stays valid)
@@ -477,42 +521,39 @@ Image carousel, Video Presentation, and Another Carousel (disabled; inner HTML c
 
 <!--BibTex citation -->
   <section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>@misc{liu2026endogsimphysicsaware4ddynamic,
-        title={EndoGSim: Physics-Aware 4D Dynamic Endoscopic Scene Simulations via MLLM-Guided Gaussian Splatting}, 
-        author={Changjing Liu and Yiming Huang and Long Bai and Beilei Cui and Hongliang Ren},
+    <div class="container is-max-desktop">
+      <div class="page-content content">
+        <div class="bibtex-header">
+          <h2 class="title">BibTeX</h2>
+          <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+            <i class="fas fa-copy"></i>
+            <span class="copy-text">Copy</span>
+          </button>
+        </div>
+        <pre id="bibtex-code"><code>@article{liu2026endogsim,
+        title={EndoGSim: Physics-Aware 4D Dynamic Endoscopic Scene Simulations via MLLM-Guided Gaussian Splatting},
+        author={Liu, Changjing and Huang, Yiming and Bai, Long and Cui, Beilei and Ren, Hongliang},
         year={2026},
         eprint={2605.16022},
         archivePrefix={arXiv},
         primaryClass={cs.CV},
         url={https://arxiv.org/abs/2605.16022}, 
   }</code></pre>
+      </div>
     </div>
 </section>
 <!--End BibTex citation -->
 
 
   <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
+  <div class="container is-max-desktop">
+    <div class="page-content content">
 
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
             You are free to borrow the source code of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
             Commons Attribution-ShareAlike 4.0 International License</a>.
           </p>
-
-        </div>
-      </div>
     </div>
   </div>
 </footer>
