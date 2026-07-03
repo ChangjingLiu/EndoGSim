@@ -82,7 +82,7 @@
   
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css?v=5">
+  <link rel="stylesheet" href="static/css/index.css?v=8">
   <style>
     .page-content .publication-tldr-label {
       flex-shrink: 0;
@@ -108,7 +108,8 @@
       align-items: center;
       justify-content: center;
       gap: 2rem;
-      margin-top: 1.25rem;
+      margin-top: 0.75rem;
+      margin-bottom: 0;
       flex-wrap: wrap;
     }
 
@@ -138,9 +139,37 @@
       color: transparent;
     }
 
-    .miccai-accept {
-      color: #dc2626;
-      font-weight: 700;
+    .corr-mark {
+      font-size: 0.65em;
+      margin-left: 0.1em;
+      color: var(--text-secondary);
+    }
+
+    .eql-cntrb .corr-mark {
+      font-size: 0.85em;
+    }
+
+    .publication-venue-info {
+      font-size: 1rem;
+    }
+
+    .publication-miccai {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin: 0 0 1.75rem;
+      letter-spacing: 0.02em;
+      line-height: 1.1;
+    }
+
+    .publication-miccai img {
+      height: 2.5rem;
+      width: auto;
+      object-fit: contain;
     }
   </style>
   
@@ -294,6 +323,10 @@
   <section class="hero hero-header">
     <div class="hero-body">
       <div class="container is-max-desktop has-text-centered">
+        <div class="publication-miccai">
+          <img src="static/images/miccai2026.png" alt="MICCAI 2026" loading="lazy" />
+          <span>MICCAI 2026 (early acceptance)</span>
+        </div>
         <h1 class="title is-1 publication-title">Endo<span class="gradient-gs">G</span><span class="gradient-sim">Sim</span>: Physics-Aware 4D Dynamic Endoscopic Scene <span class="gradient-sim">Simulations</span> via MLLM-Guided <span class="gradient-gs">Gaussian Splatting</span></h1>
         <div class="page-content">
           <div class="is-size-5 publication-authors">
@@ -306,16 +339,14 @@
             <span class="author-block">
               <a href="https://beileicui.github.io/" target="_blank">Beilei Cui</a><sup></sup>,</span>
             <span class="author-block">
-              <a href="https://www.ee.cuhk.edu.hk/en-gb/people/academic-staff/professors/prof-ren-hongliang" target="_blank">Hongliang Ren</a><sup>**</sup></span>
+              <a href="https://www.ee.cuhk.edu.hk/en-gb/people/academic-staff/professors/prof-ren-hongliang" target="_blank">Hongliang Ren</a><sup><i class="fas fa-envelope corr-mark"></i></sup></span>
           </div>
 
           <div class="is-size-5 publication-authors">
-            <span class="author-block">The Chinese University of Hong Kong<br><span class="miccai-accept">early accepted by MICCAI 2026</span></span>
-            <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-            <span class="eql-cntrb"><small><br><sup>**</sup>Indicates corresponding author</small></span>
+            <small class="eql-cntrb"><sup>*</sup>Equal Contribution &nbsp;|&nbsp; <i class="fas fa-envelope corr-mark"></i> Corresponding author</small><br>
+            <span class="author-block publication-venue-info">The Chinese University of Hong Kong</span>
             <div class="publication-logos">
               <img src="static/images/cuhk_logo.png" alt="The Chinese University of Hong Kong" loading="lazy" />
-              <img src="static/images/miccai2026.png" alt="MICCAI 2026" loading="lazy" />
             </div>
           </div>
 
