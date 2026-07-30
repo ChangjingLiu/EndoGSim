@@ -82,7 +82,7 @@
   
   <!-- Critical CSS - Load synchronously -->
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css?v=8">
+  <link rel="stylesheet" href="static/css/index.css?v=13">
   <style>
     .page-content .publication-tldr-label {
       flex-shrink: 0;
@@ -383,8 +383,15 @@
           </div>
 
           <div class="publication-tldr">
-            <span class="publication-tldr-label">TL;DR</span>
-            <span class="publication-tldr-text">From surgical video to physics-based simulation.</span>
+            <div class="publication-tldr-top">
+              <span class="publication-tldr-label">TL;DR</span>
+              <span class="publication-tldr-text">From surgical video to physics-based simulation.</span>
+            </div>
+            <ul class="contributions-list publication-tldr-contributions">
+              <li>Unified physics-aware reconstruction and simulation from endoscopic video.</li>
+              <li>Object-wise material field with MLLM initialization and MPM-based refinement.</li>
+              <li>State-of-the-art physical accuracy and visual realism on public and in-house data.</li>
+            </ul>
           </div>
 
           <figure class="image hero-teaser-gif">
@@ -412,44 +419,124 @@
 
 <!-- Paper abstract -->
 <section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="page-content has-text-centered">
-      <h2 class="title is-3">Abstract</h2>
-      <div class="content has-text-justified">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="page-content has-text-centered">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified section-body">
         <p>
           In robot-assisted minimally invasive surgery, high-fidelity dynamic endoscopic scene reconstruction and simulation are crucial to enhancing downstream tasks and advancing surgical outcomes. However, existing methods primarily focus on visual reconstruction, lacking physics-based descriptions of the scene required for realistic simulation. We propose a unified framework that achieves physics-aware reconstruction and physical simulation of endoscopic scenes through Multi-modal Large Language Models (MLLMs)-guided Gaussian Splatting. Our approach utilizes 4D Gaussian Splatting (4DGS) integrated with pre-trained segmentation and depth estimation to represent deformable tissues and tools. To achieve automatic inference of physical properties, we introduce an object-wise material field that initializes material parameters via MLLM and refines them through a differentiable Material Point Method (MPM) under joint supervision from rendered images and optical flow.
         </p>
+        </div>
       </div>
     </div>
   </div>
 </section>
 <!-- End paper abstract -->
 
-<section class="section hero is-small">
+<!-- Method comparison -->
+<section class="section hero is-light">
   <div class="hero-body">
     <div class="container is-max-desktop">
       <div class="page-content has-text-centered">
-        <h2 class="title is-3">Pipeline</h2>
-        <figure class="image">
-          <img src="static/images/overview.png" alt="EndoGSim pipeline overview" style="max-width: 100%; height: auto;" loading="lazy" />
-        </figure>
+        <h2 class="title is-3">Comparison with Prior Work</h2>
+        <div class="section-body">
+          <p class="comparison-caption">
+            Table 1: Comparison of methods by video input, auto initialization, object-wise material field, and physical simulation.
+          </p>
+          <div class="table-container comparison-table-wrap">
+        <table class="table is-bordered is-fullwidth comparison-table">
+          <thead>
+            <tr>
+              <th></th>
+              <th>PhysGen</th>
+              <th>Physics3D</th>
+              <th>PhysGaussian</th>
+              <th>GIC</th>
+              <th>PhysFlow</th>
+              <th class="ours-col">Ours</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>Video Input</th>
+              <td><span class="mark-no" aria-label="no">✗</span></td>
+              <td><span class="mark-no" aria-label="no">✗</span></td>
+              <td><span class="mark-no" aria-label="no">✗</span></td>
+              <td><span class="mark-yes" aria-label="yes">✓</span></td>
+              <td><span class="mark-yes" aria-label="yes">✓</span></td>
+              <td class="ours-col"><span class="mark-yes" aria-label="yes">✓</span></td>
+            </tr>
+            <tr>
+              <th>Auto Initialization</th>
+              <td><span class="mark-yes" aria-label="yes">✓</span></td>
+              <td><span class="mark-no" aria-label="no">✗</span></td>
+              <td><span class="mark-no" aria-label="no">✗</span></td>
+              <td><span class="mark-no" aria-label="no">✗</span></td>
+              <td><span class="mark-yes" aria-label="yes">✓</span></td>
+              <td class="ours-col"><span class="mark-yes" aria-label="yes">✓</span></td>
+            </tr>
+            <tr>
+              <th>Material Field</th>
+              <td><span class="mark-no" aria-label="no">✗</span></td>
+              <td><span class="mark-no" aria-label="no">✗</span></td>
+              <td><span class="mark-no" aria-label="no">✗</span></td>
+              <td><span class="mark-no" aria-label="no">✗</span></td>
+              <td><span class="mark-no" aria-label="no">✗</span></td>
+              <td class="ours-col"><span class="mark-yes" aria-label="yes">✓</span></td>
+            </tr>
+            <tr>
+              <th>Physical Simulation</th>
+              <td><span class="mark-no" aria-label="no">✗</span></td>
+              <td><span class="mark-yes" aria-label="yes">✓</span></td>
+              <td><span class="mark-yes" aria-label="yes">✓</span></td>
+              <td><span class="mark-yes" aria-label="yes">✓</span></td>
+              <td><span class="mark-yes" aria-label="yes">✓</span></td>
+              <td class="ours-col"><span class="mark-yes" aria-label="yes">✓</span></td>
+            </tr>
+          </tbody>
+        </table>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- <section class="section hero is-small is-light">
+<section class="section hero is-small">
   <div class="hero-body">
     <div class="container is-max-desktop">
-      <div class="has-text-centered">
-        <h2 class="title is-4">Results</h2>
+      <div class="page-content has-text-centered">
+        <h2 class="title is-3">Pipeline</h2>
+        <div class="section-body">
         <figure class="image">
-          <img src="static/images/result_flow.png" alt="EndoGSim qualitative results across surgical scenes" style="max-width: 100%; height: auto;" loading="lazy" />
+          <img src="static/images/overview.png" alt="EndoGSim pipeline overview" style="max-width: 100%; height: auto;" loading="lazy" />
         </figure>
+        </div>
       </div>
     </div>
   </div>
-</section> -->
+</section>
+
+<section class="section hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="page-content has-text-centered">
+        <h2 class="title is-3">Results</h2>
+        <div class="section-body">
+          <figure class="image result-figure">
+            <img src="static/images/qualitative_result.png" alt="EndoGSim qualitative comparison across surgical scenes" style="max-width: 100%; height: auto;" loading="lazy" />
+            <figcaption class="result-caption">Qualitative comparison on EndoNeRF and PorcineEndo datasets.</figcaption>
+          </figure>
+          <figure class="image result-figure">
+            <img src="static/images/result_flow.png" alt="EndoGSim optical flow comparison" style="max-width: 100%; height: auto;" loading="lazy" />
+            <figcaption class="result-caption">Rendered images and optical flow errors compared with baselines.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!--
 Image carousel, Video Presentation, and Another Carousel (disabled; inner HTML comments stripped so this block comment stays valid)
