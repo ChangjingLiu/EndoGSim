@@ -171,6 +171,35 @@
       width: auto;
       object-fit: contain;
     }
+
+    .demo-embed-wrap {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+
+    .demo-embed-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 920px;
+      border: 0;
+      background: #ffffff;
+    }
+
+    .demo-embed-note {
+      margin-top: 0.75rem;
+      color: #64748b;
+      font-size: 0.95rem;
+    }
+
+    @media screen and (max-width: 768px) {
+      .demo-embed-wrap iframe {
+        height: 780px;
+      }
+    }
   </style>
   
   <!-- Non-critical CSS - Load asynchronously -->
@@ -380,6 +409,16 @@
           <span>arXiv</span>
         </a>
       </span>
+
+        <span class="link-block">
+          <a href="https://huggingface.co/spaces/ChangjingLiu/EndoGSim_demo" target="_blank"
+          class="external-link button is-normal is-rounded is-dark">
+          <span class="icon">
+            <i class="fas fa-play"></i>
+          </span>
+          <span>Demo</span>
+        </a>
+      </span>
           </div>
 
           <div class="publication-tldr">
@@ -433,6 +472,33 @@
   </div>
 </section>
 <!-- End paper abstract -->
+
+<!-- Interactive demo -->
+<section class="section hero is-small" id="demo">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="page-content has-text-centered">
+        <h2 class="title is-3">Interactive Demo</h2>
+        <div class="section-body">
+          <p class="demo-embed-note">
+            Drag on the image to apply force. First load may take ~30s on ZeroGPU.
+            <a href="https://huggingface.co/spaces/ChangjingLiu/EndoGSim_demo" target="_blank" rel="noopener noreferrer">Open full demo</a>
+          </p>
+          <div class="demo-embed-wrap">
+            <iframe
+              src="https://changjingliu-endogsim-demo.hf.space"
+              title="EndoGSim Interactive Demo"
+              loading="lazy"
+              allow="clipboard-read; clipboard-write; fullscreen"
+              referrerpolicy="strict-origin-when-cross-origin">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End interactive demo -->
 
 <!-- Method comparison -->
 <section class="section hero is-light">
